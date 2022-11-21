@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: rgb(49, 69, 34); */
+    /* background-image: url("./icon/photo-1434030216411-0b793f4b4173.avif"); */
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.10)) ,url("../icon/photo-1486312338219-ce68d2c6f44d.avif");
+    background-position-y: center;
+    background-size: cover;
+    /* background-position: bottom; */
+
+    
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 90vh;
+    background-color: white;
+    margin: 5vh auto;
+    padding: 4vh;
+    box-shadow: 5px 3px 8px #888888;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input[type=email], input[type=password], input[type=text] {
+    width: 100%;
+    padding: 9px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#phone{
+    width: 100%;
+    padding: 9px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    background-color: #385c55;
+    /* background-color: rgb(36, 66, 47); */
+    color: white;
+    padding: 11px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    opacity: 0.8;
+}
+h3 {
+    text-align: center;
+    color: #385c55;
+    /* color: #023f28; */
+}
+
+#display-image{
+    background-image: url('../icon/profile.png');
+    width: 25vh;
+    height: 25vh;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+}
+
+.error{
+    display: none;
+    color: red;
+    font-size: 8px;
+    margin-top: -4px;
+}
+/* .cc{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(2, 63, 40,0.2);
+}
+*/
+
+@media screen and (max-width: 960px) {
+    .container {
+        width: 90%;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+  }

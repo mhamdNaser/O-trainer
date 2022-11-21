@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<link rel="stylesheet" type="text/css" href="./CSS/trainer.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/782baa506c.js" crossorigin="anonymous"></script>	
+    <title>Trainer</title>
+
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">O<span>-Trainers</span></h1>
+        <i class="fa fa-chevron-left menu-icon"></i>
+        <ul class="sidenav">
+            <li  class="active" onclick="show1()"><i class="fa fa-home"></i><a href="#"> Home</a></li>
+            <li onclick="show2()"><i class="fa fa-user"></i><a href="#"> Profile User</a></li>
+            <li onclick="show3()"><i class="fa-solid fa-graduation-cap"></i><a href="#"> Student</a></li>
+            <li onclick="show4()"><i class="fa-solid fa-clipboard-user"></i><a href="#"> Attendance</a></li>
+            <li onclick="show5()"><i class="fa-solid fa-house-laptop"></i><a href="#"> Assignment</a></li>
+            <li onclick="show6()"><i class="fa-solid fa-comment"></i><a href="#"> Feedback</a></li>
+            <li id="li" onclick="show7()"><i class="fa-solid fa-right-from-bracket"></i><a href="index.html" id="Home" > Log Out</a></li>
+
+        </ul>
+    </div>
+
+    <div id="home" >
+
+        <div id="home1">
+            <img src="" id="trimage" alt="Use profile">
+        </div>
+        <div class="neeews">
+            <div class="coupon">
+                <div class="containerHome">
+                    <h3>Important news </h3>
+                </div>
+
+                <div class="containerHome" style="background-color:white">
+                    <p id="news1"></p>
+                </div>
+
+            </div>
+            <div class="coupon">
+                <div class="containerHome">
+                    <h3>daily news </h3>
+                </div>
+
+                <div class="containerHome" style="background-color:white">
+                    <p id="news2"></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- <div style="display: flex;"> -->
+    <div >
+
+
+            <div id="userProfile">
+                <div class="card1">
+                    <img id="trainerphoto" src="./icon/icon-256x256.png" alt="" style="width:100%">
+                    <h1 id="traincard"> </h1>
+                    <br>
+                    <p class="title">Orange Coding Academy</p>
+                    <br>  
+                    <p><button id="edittrain" onclick="edittrain()">Edit</button></p>
+                </div>
+                <div class="card2">
+                    <div class="info">
+                        <p>Information</p>
+                    </div> 
+                    <div>
+                        <p>Name:</p>
+                        <span id="profname"></span>
+                    </div>
+                    <div>
+                        <p>Id: 0</p>
+                    </div>
+                            
+                    <div>
+                        <p>Email:</p>
+                        <span id="email"></span>
+                    </div>    
+                    <div>
+                        <p>Phone Number:</p>
+                        <span id="phone"></span>
+                    </div>    
+                    <div>
+                        <p>Brthday Date:</p>
+                        <span id="birthday">24-12-1995</span>
+                    </div>    
+                    <div>
+                        <p>bio:</p>
+                        <span id="biotext"></span>
+                        <textarea id="biobox" cols="45" rows="6"></textarea>
+                        <button id="biobut" onclick="savebio()">SAVE</button>
+                    </div>    
+                    
+                </div>
+            </div>
+        
+    </div>
+    <div id="studcard">
+        <input type="number" class="studinput" id="Studentid" placeholder="Enter ID">
+        <p id="erroridsame">id is repeat</p>
+        <input type="text" class="studinput" id="StudentName" placeholder="Enter Name">
+        <button id="savestudent" onclick="saveStudent()">SAVE</button>
+    </div>
+
+    <section id="student" class="tablee">
+        <div class="bsxaddstud">
+            <button id="addstud" onclick="addstud()">add student</button>
+        </div>
+        <div id="student-list" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+    <section id="attendance" class="tablee">
+        <div id="boxinput1">
+            <input type="text" id="studattend" placeholder="Attendance">
+            <input type="text" id="allDay" placeholder="Total Day">
+            <input type="text" id="coatatten" placeholder="Coach Name">
+            <button onclick="addatten()">add Attendance</button>
+        </div>
+        <div id="attendance-list" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+    <section id="task" class="tablee">
+        <div id="boxinput2">
+            <input type="text" id="studtask" placeholder="student Task">
+            <input type="text" id="allTask" placeholder="All Task">
+            <input type="text" id="coattask" placeholder="Coach Name">
+            <button onclick="addtask()">add Task</button>
+        </div>
+        <div id="task-list" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+    <section id="feed" class="tablee">
+        <div id="boxinput3">
+            <input type="text" id="Studfedd" placeholder="Feed Back">
+            <input type="text" id="cofeed" placeholder="Coach Name">
+            <button onclick="addfeed()">add FeedBack</button>
+        </div>
+        <div id="feed-back" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./JS/sidebar.js"></script>
+    <script src="./JS/trainer.js"></script>
+</body>
+</html>

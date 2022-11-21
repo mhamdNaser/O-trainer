@@ -1,0 +1,274 @@
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.15)),
+    url("../icon/cover.jfif");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    height: 12vh;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+/* nav .logo {
+    width: 90%;
+    height: 80%;
+    text-align: center;
+}
+   */
+nav .menu {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 25px;
+}
+
+nav .menu a {
+    width: 25%;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+nav .menu a:hover {
+    color: #00b894;
+}
+
+nav #logo  {
+    margin-left: 15px;
+}
+
+main {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+    /* section h3 {
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black;
+  } */
+
+section h1 {
+    margin: 30px 0 20px 0;
+    font-size: 55px;
+    font-weight: 700;
+    text-shadow: 2px 1px 5px black;
+    text-transform: uppercase;
+}
+
+section p {
+    font-size: 25px;
+    word-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 2px black;
+}
+
+section a {
+    padding: 12px 30px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+section .btnone {
+    /*background: #00b894;*/
+    background: #fff;
+    color: #000;
+}
+
+.btnone:hover {
+    background: #00b894;
+    color: white;
+}
+
+
+section .btntwo {
+    background: #fff;
+    color: #000;
+    margin-left: 20px;
+}
+
+.btntwo:hover {
+    background: #00b894;
+    color: white;
+}
+
+.change_content:after {
+    content: "";
+    animation: changetext 4s infinite linear;
+    color: #00b894;
+}
+
+@keyframes changetext {
+    0% {
+        content: "Welcome";
+    }
+    50% {
+        content: "to";
+    }
+    100% {
+        content: "O-trainers";
+    }
+    /* 80% {
+    content: "for";
+    }
+    100% {
+    content: "project";
+    } */
+}
+
+
+.container{
+	max-width: 100%;
+	margin:auto;
+}
+/* .row{
+	display: flex;
+	flex-wrap: wrap;
+} */
+/* ul{
+	list-style: none;
+} */
+.footer{
+	background-color: #00b894;
+    padding: 30px 0;
+    
+}
+.footer-col{
+    width: 25%;
+   /* padding: 0 15px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #ffffff;
+	height: 2px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.footer-col .social-links{
+    margin-left: 20px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color:#508068;
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+.dropdown {
+    display: none;
+}
+.dropdown .drop-content a {
+    color: #00213a ;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+}
+.dropbtn {
+    background-color: #00b894;
+    color: white;
+    padding: 5px;
+    font-size: 1.25em;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .drop-content {display: block;} 
+
+.dropbtn:hover {
+    transform: none;
+}
+.drop-content a:hover {background-color: #ddd;}
+
+
+/*responsive*/
+
+@media(max-width: 890px){
+    .dropdown {
+    display: block;
+    margin-right: 50px;
+}
+nav .menu{
+    display: none;
+}
+}
+@media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }
+}
+
+
+
+

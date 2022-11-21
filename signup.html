@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./CSS/singup.css">
+    <link rel="icon" href="./icon/Untitled-2 (3).png">
+
+     <title>Signup</title>
+</head>
+<body>
+
+        <div class="container">
+            
+            <h3>CREATE ACCOUNT</h3>
+            <div id="display-image"></div>
+            <input type="file" id="image-input"  accept="image/jpeg, image/png, image/jpg">
+            <form id="form">
+                <input type="text" id="username" placeholder="User name" >
+                <p class="error" id="errName"></p>
+                <input type="email" id="email" placeholder="Enter email">
+                <p class="error" id="errEmail"></p>
+                <input type="text" id="phone" placeholder="Enter Phone">
+                <p class="error" id="errphon"></p>
+                <input type="password" id="password" placeholder="Enter password">
+                <input type="password" id="repssword" placeholder="Repeat your password">
+                <p class="error" id="match"></p>
+                <button type="submit">Sign Up</button>
+
+            </form>
+
+    </div>
+    <script src="./JS/signup.js"></script>
+</body>
+</html>

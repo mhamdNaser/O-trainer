@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #385c55 ;
+    }
+.container {
+    display: flex;
+    width: 80%;
+    height: 75vh;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 5px 3px 8px #888888;
+}
+.sec2 {
+    /* background-color:#24422F; */
+    width: 100%;
+}
+.sec1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 35px;
+    width: 100%;
+    background-color: white
+    /* background-color: #BFC9CA */
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+.error{
+    display: none;
+    color: red;
+    font-size: 8px;
+    margin-top: -4px;
+}
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    background-color:#385c55;
+    /* background-color:#24422F; */
+    color: #D6E2E0;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+}
+button:hover {
+    opacity: 0.8;
+    transition: 0.4s;
+}
+figure{
+    margin: 0 auto;
+}
+figure img {
+    /* width: 100%;  */
+    border-radius: 50%;
+}
+figcaption{
+    text-align: center;
+}
+.sec2 img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+@media (max-width:790px){
+    .container {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+}
