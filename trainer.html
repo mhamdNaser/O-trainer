@@ -29,11 +29,12 @@
     </div>
 
     <div id="home" >
-
-        <div id="home1">
-            <img src="" id="trimage" alt="Use profile">
+        <div class="tarinerphoto">
+            <img id="trainerphoto1" src="./icon/icon-256x256.png" alt="" style="width:240px">
+            <div id="home1">
+            </div>
         </div>
-        <div class="neeews">
+        <div class="neeews" style="width: 90%;">
             <div class="coupon">
                 <div class="containerHome">
                     <h3>Important news </h3>
@@ -44,23 +45,11 @@
                 </div>
 
             </div>
-            <div class="coupon">
-                <div class="containerHome">
-                    <h3>daily news </h3>
-                </div>
-
-                <div class="containerHome" style="background-color:white">
-                    <p id="news2"></p>
-                </div>
-
-            </div>
         </div>
 
     </div>
     <!-- <div style="display: flex;"> -->
     <div >
-
-
             <div id="userProfile">
                 <div class="card1">
                     <img id="trainerphoto" src="./icon/icon-256x256.png" alt="" style="width:100%">
@@ -77,18 +66,24 @@
                     <div>
                         <p>Name:</p>
                         <span id="profname"></span>
+                        <input type="text" id="text" >
+                        <p class="error" id="errName"></p>
                     </div>
                     <div>
-                        <p>Id: 0</p>
+                        <p id="traneridset"></p>
                     </div>
                             
                     <div>
                         <p>Email:</p>
                         <span id="email"></span>
+                        <!-- <input type="email" id="emaill1" > -->
+                        <input id="emaill1" type="email" placeholder="Email" />
                     </div>    
                     <div>
                         <p>Phone Number:</p>
                         <span id="phone"></span>
+                        <input type="number" id="phonee1" >
+                        
                     </div>    
                     <div>
                         <p>Brthday Date:</p>
@@ -106,10 +101,13 @@
         
     </div>
     <div id="studcard">
-        <input type="number" class="studinput" id="Studentid" placeholder="Enter ID">
-        <p id="erroridsame">id is repeat</p>
-        <input type="text" class="studinput" id="StudentName" placeholder="Enter Name">
+        <input type="text" class="studinput" value="" id="StudentName" placeholder="Enter Name">
         <button id="savestudent" onclick="saveStudent()">SAVE</button>
+    </div>
+    <div id="deletcard">
+        <h6>Do You Want Delet This Student</h6>
+        <button id="savestudent" onclick="suredelet()">Yes</button>
+        <button id="savestudent" onclick="notdelet()">No</button>
     </div>
 
     <section id="student" class="tablee">
@@ -122,9 +120,8 @@
     </section>
     <section id="attendance" class="tablee">
         <div id="boxinput1">
-            <input type="text" id="studattend" placeholder="Attendance">
-            <input type="text" id="allDay" placeholder="Total Day">
-            <input type="text" id="coatatten" placeholder="Coach Name">
+            <input type="text" value="" id="studattend" placeholder="Attendance">
+            <input type="text" value="" id="allDay" placeholder="Total Day">
             <button onclick="addatten()">add Attendance</button>
         </div>
         <div id="attendance-list" class="table-list">
@@ -133,9 +130,8 @@
     </section>
     <section id="task" class="tablee">
         <div id="boxinput2">
-            <input type="text" id="studtask" placeholder="student Task">
-            <input type="text" id="allTask" placeholder="All Task">
-            <input type="text" id="coattask" placeholder="Coach Name">
+            <input type="text" value="" id="studtask" placeholder="student Task">
+            <input type="text" value="" id="allTask" placeholder="All Task">
             <button onclick="addtask()">add Task</button>
         </div>
         <div id="task-list" class="table-list">
@@ -144,8 +140,7 @@
     </section>
     <section id="feed" class="tablee">
         <div id="boxinput3">
-            <input type="text" id="Studfedd" placeholder="Feed Back">
-            <input type="text" id="cofeed" placeholder="Coach Name">
+            <textarea name="" id="Studfedd" cols="20" rows="1" placeholder="Feed Back"></textarea>
             <button onclick="addfeed()">add FeedBack</button>
         </div>
         <div id="feed-back" class="table-list">

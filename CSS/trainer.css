@@ -232,6 +232,7 @@ button:hover, a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 75%;
     /* padding: 30px; */
     /* margin-left: 10px; */
     color: black;
@@ -406,7 +407,21 @@ table button:hover{
     left: 50%;
     padding: 30px;
     width: 300px;
-    height: 240px;
+    height: 140px;
+    border-radius: 8px;
+    background-color: #00b894;
+    visibility: hidden;
+}
+
+#studdeleted{
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    width: 300px;
+    height: 140px;
     border-radius: 8px;
     background-color: #00b894;
     visibility: hidden;
@@ -424,6 +439,29 @@ table button:hover{
     border-radius: 8px;
     background-color: #00b894;
     visibility: hidden;
+}
+
+#deletcard{
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    width: 180px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: #00b894;
+    color: white;
+    visibility: hidden;
+}
+
+#deletcard button{
+    font-size: 12px;
+    margin-top: 15%;
+    margin-right: 3%;
+    height: 35%;
+    width: 30%;
 }
 
 .studinput{
@@ -479,6 +517,66 @@ table button:hover{
     display: none;
 }
 
+#attedit{
+    width: 25px;
+    display: none;
+}
+
+.tarinerphoto{
+    background-color: #00b894;
+}
+
+
+#numbut{
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+#phonee1{
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+    
+}
+
+
+
+#embut{
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+#emaill1{
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+    
+}
+
+#txbut{
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+#text{
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+}
+
+#trainerphoto1{
+    margin-top: 3%;
+}
+
 tr:hover {background-color: rgba(0, 184, 148,0.5);}
 table tbody tr:nth-of-type(odd):hover{background-color:rgba(0, 184, 148,0.5);}
 
+@media only screen and (max-width: 720px){
+    .card2{
+        width: 100%;
+    
+    }
+}

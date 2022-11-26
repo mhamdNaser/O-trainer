@@ -32,7 +32,6 @@ form{
     flex-direction: column;
 }
 .error{
-    display: none;
     color: red;
     font-size: 8px;
     margin-top: -4px;

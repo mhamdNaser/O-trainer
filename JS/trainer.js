@@ -21,31 +21,33 @@ function changeNews() {
 }
 
 setInterval(changeNews, 1000); 
-function news2(){
-newsTwo=[`We would like to thank our colleagues at Orange Jodan for their endless support in delivering many training courses and programs for the second cohort students of the Coding Academy and also we would like to thank our partners from different companies for their contenious support`,`Discover more about the second cohort graduation projects. The students did their projects with enthusiasm and passion to learn more, also they submitted their graduation projects and deliver it on time.`]
+// function news2(){
+// newsTwo=[`We would like to thank our colleagues at Orange Jodan for their endless support in delivering many training courses and programs for the second cohort students of the Coding Academy and also we would like to thank our partners from different companies for their contenious support`,`Discover more about the second cohort graduation projects. The students did their projects with enthusiasm and passion to learn more, also they submitted their graduation projects and deliver it on time.`]
 
-for (i=0;i<=newsTwo.length;i++){
-    i = Math.floor((Math.random() * 2))
-    return  newsTwo[i]
+// for (i=0;i<=newsTwo.length;i++){
+//     i = Math.floor((Math.random() * 2))
+//     return  newsTwo[i]
     
-}
-}
-function changeNews2() {
+// }
+// }
+// function changeNews2() {
 
-    document.getElementById(`news2`).innerHTML = news2();
-}
+//     document.getElementById(`news2`).innerHTML = news2();
+// }
 
-setInterval(changeNews2, 1000); 
+// setInterval(changeNews2, 1000); 
 
 
 //--------------------------------------
 
 
 let Students = JSON.parse(localStorage.getItem("Students")) || []
-let Trainers = JSON.parse(localStorage.getItem("Trainers"));
+let Trainers = JSON.parse(localStorage.getItem("Trainers"))
+const trid = JSON.parse(sessionStorage.getItem("loid"))
 const name1 = JSON.parse(sessionStorage.getItem("loname"))
 const mail = JSON.parse(sessionStorage.getItem("lomail"))
 const phonee = JSON.parse(sessionStorage.getItem("lophone")) 
+const photo = document.getElementById("trainerphoto")
 
 var studentsId
 var newbio
@@ -62,16 +64,38 @@ task = document.getElementById("task")
 feed = document.getElementById("feed")
 Home.style.display = "flex" 
 
+if ( name1 == "mona" ){
+    document.getElementById("trainerphoto").src = "./icon/mona.jpeg"
+}
+else if( name1 == "alaa" ){
+    document.getElementById("trainerphoto").src = "./icon/alaa.jpeg"
+}
+else{
+    document.getElementById("trainerphoto").src = "./icon/icon-256x256.png"
+}
+
+
 // add anew student
 addstud = () => {
     document.getElementById('studcard').style.visibility = "visible"
+    document.getElementById('StudentName').value = ""
 }
 
 saveStudent = () => {
-    const stuId = document.getElementById('Studentid') 
+    var stuId = Students.length  
     const stuName = document.getElementById('StudentName')
+
+    Students.map((ele) =>{
+    
+        //Find index of specific object using findIndex method.    
+        feedloc = Students.findIndex((ele => ele.id == stuId ));
+
+        if ( ele.id > 0 && ele.id == stuId){
+            stuId = ele.id + 1
+        }
+    });
     var obj1 = {
-        id: stuId.value, 
+        id: stuId, 
         name: stuName.value, 
         atten: 'default', 
         task: 'default', 
@@ -91,7 +115,6 @@ saveStudent = () => {
 
 // WELCOME PAGE
 show1 = () =>{
-    Home = document.getElementById("home")
     Home.style.display = "flex"
     stud.style.display = "none"
     atten.style.display = "none"
@@ -99,6 +122,16 @@ show1 = () =>{
     feed.style.display = "none"
     profile.style.display = "none"
     Home.class = "active"
+
+    if ( name1 == "mona" ){
+        document.getElementById("trainerphoto").src = "./icon/mona.jpeg"
+    }
+    else if( name1 == "alaa" ){
+        document.getElementById("trainerphoto").src = "./icon/alaa.jpeg"
+    }
+    else{
+        document.getElementById("trainerphoto").src = "./icon/icon-256x256.png"
+    }
 }
 
 // TRAINER PROFILE
@@ -107,19 +140,17 @@ show2 = () =>{
     document.getElementById('profname').innerHTML =  name1
     document.getElementById('email').innerHTML =  mail
     document.getElementById('phone').innerHTML =  phonee
+    document.getElementById('traneridset').innerHTML = "ID : " + trid
 
-    Trainers.map((ele) =>{
-
-        if ( ele.name == "mona" ){
-            document.getElementById("trainerphoto").src = "./icon/mona.jpeg"
-        }
-        else if( ele.name == "alaa" ){
-            document.getElementById("trainerphoto").src = "./icon/alaa.jpeg"
-        }
-        else{
-            document.getElementById("trainerphoto").src = "./icon/icon-256x256.png"
-        }
-    });
+    if ( name1 == "mona" ){
+        document.getElementById("trainerphoto1").src = "./icon/mona.jpeg"
+    }
+    else if( name1 == "alaa" ){
+        document.getElementById("trainerphoto1").src = "./icon/alaa.jpeg"
+    }
+    else{
+        document.getElementById("trainerphoto1").src = "./icon/icon-256x256.png"
+    }
     
     Home.style.display = "none"
     profile.style.display = "flex"
@@ -142,7 +173,8 @@ show3 = () =>{
     stud.class = "active"
 
     var table = "<table>"
-    table+="<tr><caption>STUDENT DATA</caption></tr>"
+    table+=`<tr><caption>${name1}</caption></tr>`
+    table+=`<tr></tr>`
 
     table += "<tr>"
     table += "<th>" + "ID" + "</th>"
@@ -180,7 +212,9 @@ show4 = () =>{
     atten.class = "active"
 
     var table = "<table>"
-    table+="<tr><caption>ATTENDANCE</caption></tr>"
+    table+=`<tr><caption>${name1}</caption></tr>`
+    table+=`<tr></tr>`
+
     table += "<tr>"
     table += "<th>" + "ID" + "</th>"
     table += "<th>" + "NAME" + "</th>" 
@@ -215,7 +249,8 @@ show5 = () =>{
     task.class = "active"
 
     var table = "<table>"
-    table+="<tr><caption>ASSIGNMENTS</caption></tr>"
+    table+=`<tr><caption>${name1}</caption></tr>`
+    table+=`<tr></tr>`
 
     table += "<tr>"
     table += "<th>" + "ID" + "</th>"
@@ -253,7 +288,8 @@ show6 = () =>{
 
 
     var table = "<table>"
-    table+="<tr><caption>FEEDBACK</caption></tr>"
+    table+=`<tr><caption>${name1}</caption></tr>`
+    table+=`<tr></tr>`
 
     table += "<tr>"
     table += "<th>" + "ID" + "</th>"
@@ -269,7 +305,7 @@ show6 = () =>{
         table += "<td >" + ele.name + "</td>";
         table += "<td>"+  ele.feed + "</td>" ;
         table += "<td>"+  ele.coachfeed + "</td>" ;
-        table += "<td>" + `<button id='butfeed' onclick='shwfeed(${ele.id})'>add</button>` + "</td>" ;
+        table += "<td>" + `<button id='butfeed' onclick='shwfeed(${ele.id})'>edit</button>` + "</td>" ;
         table += "<tr>"
     });
     table += "</tr>"
@@ -281,6 +317,8 @@ show7 = () => { window.open('./index.html')}
 shwatten = (id) => {
     studentsId = id
     document.getElementById("boxinput1").style.visibility = "visible"
+    document.getElementById('studattend').value = ""
+    document.getElementById('allDay').value = ""
     return studentsId
 }
 
@@ -288,6 +326,7 @@ shwatten = (id) => {
 shwfeed = (id) => {
     studentsId = id
     document.getElementById("boxinput3").style.visibility = "visible"
+    document.getElementById('Studfedd').value = ""
     return studentsId
 }
 
@@ -295,22 +334,42 @@ shwfeed = (id) => {
 shwtask = (id) => {
     studentsId = id
     document.getElementById("boxinput2").style.visibility = "visible"
+    document.getElementById('studtask').value = ""
+    document.getElementById('allTask').value = ""
     return studentsId
 }
 
+// SOW CONFIRM DELETE
 function deletStudent(id){ 
+    document.getElementById('deletcard').style.visibility = "visible"
+
     studentsId = id
-    //Find index of specific object using findIndex method.    
-    const index = Students.findIndex((ele => ele.id == studentsId ));
+    return console.log(studentsId)
 
-    //Update object's name property.
-    Students.splice(index , 1)
-
-
-    localStorage.setItem("Students", JSON.stringify(Students));
-    document.getElementById("boxinput1").style.visibility = "visible"
-    show3();
 }
+
+function suredelet(){ 
+
+    var retudele = studentsId
+    console.log(retudele)
+        
+    const index = Students.findIndex((ele => ele.id == retudele ));
+
+        //Update object's name property.
+        Students.splice(index , 1)
+
+
+        localStorage.setItem("Students", JSON.stringify(Students));
+        document.getElementById('deletcard').style.visibility = "hidden"
+        show3();
+}
+
+function notdelet(id){
+    show3();
+    document.getElementById('deletcard').style.visibility = "hidden"
+    return id;
+}
+
 
 
 // ADD ATTENDANCE
@@ -318,23 +377,27 @@ function addatten(){
     var stuattenId = studentsId
     var stuatten = document.getElementById('studattend')
     var ALLatten = document.getElementById('allDay')
-    var coachatten = document.getElementById('coatatten')
-    Students.map((ele) =>{
+        if ( stuatten.value >=  ALLatten.value ){
+            Students.map((ele) =>{
     
-            //Find index of specific object using findIndex method.    
-            feedloc = Students.findIndex((ele => ele.id == stuattenId ));
-
-
-            //Update object's name property.
-            Students[feedloc].atten = stuatten.value
-            Students[feedloc].totalday = ALLatten.value
-            Students[feedloc].coachATTE = coachatten.value
-
-
-            localStorage.setItem("Students", JSON.stringify(Students));
-            document.getElementById("boxinput1").style.visibility = "visible"
-            show4();
-        });
+                //Find index of specific object using findIndex method.    
+                feedloc = Students.findIndex((ele => ele.id == stuattenId ));
+    
+    
+                //Update object's name property.
+                Students[feedloc].atten = stuatten.value
+                Students[feedloc].totalday = ALLatten.value
+                Students[feedloc].coachATTE = name1
+    
+    
+                localStorage.setItem("Students", JSON.stringify(Students));
+                document.getElementById("boxinput1").style.visibility = "hidden"
+                show4();
+            });
+        }
+        else{
+            alert("your task is not true")
+        }
 }
 
 // ADD TASKS
@@ -342,8 +405,8 @@ function addtask(){
     var stuTASKId = studentsId
     var stuTASK = document.getElementById('studtask')
     var ALLTASK = document.getElementById('allTask')
-    var coachTASK = document.getElementById('coattask')
-    Students.map((ele) =>{
+    if ( stuTASK.value >=  ALLTASK.value ){
+        Students.map((ele) =>{
     
             //Find index of specific object using findIndex method.    
             feedloc = Students.findIndex((ele => ele.id == stuTASKId ));
@@ -351,22 +414,26 @@ function addtask(){
             //Update object's name property.
             Students[feedloc].task = stuTASK.value
             Students[feedloc].totaltask = ALLTASK.value
-            Students[feedloc].coacTask = coachTASK.value
+            Students[feedloc].coacTask = name1
 
             //Log object to console again.
-            console.log("After update: ", Students[feedloc])
+            console.log(stuTASK.value)
+            console.log(ALLTASK.value)
 
             localStorage.setItem("Students", JSON.stringify(Students));
             document.getElementById("boxinput2").style.visibility = "hidden"
             show5();
         });
+    }
+    else{
+        alert("your task is not true")
+    }
 }
 
 // ADD FEEDBACK
 function addfeed(){ 
     var stufeedId = studentsId
     let studFeed = document.getElementById('Studfedd')
-    let coachFeed = document.getElementById('cofeed')
     Students.map((ele) =>{
     
             //Find index of specific object using findIndex method.    
@@ -374,7 +441,7 @@ function addfeed(){
 
             //Update object's name property.
             Students[feedloc].feed = studFeed.value
-            Students[feedloc].coachfeed = coachFeed.value
+            Students[feedloc].coachfeed = name1
 
             localStorage.setItem("Students", JSON.stringify(Students));
             document.getElementById("boxinput3").style.visibility = "hidden"
@@ -384,20 +451,57 @@ function addfeed(){
 
 // show bio edite 
 edittrain = () => {
+    document.getElementById("text").style.display = "block"
+    document.getElementById("emaill1").style.display = "block"
+    document.getElementById("phonee1").style.display = "block"
     document.getElementById("biobox").style.display = "block"
     document.getElementById("biobut").style.display = "block"
+
+    document.getElementById("profname").style.display = "none"
+    document.getElementById("email").style.display = "none"
+    document.getElementById("phone").style.display = "none"
     document.getElementById("biotext").style.display = "none"
-    
 }
 
 savebio = () => {
+    var updatename = document.getElementById("text")
+    var updatemail = document.getElementById("emaill1")
+    var updatephone = document.getElementById("phonee1")
+
     var biotext = document.getElementById("biobox").value
-    localStorage.setItem("bio", JSON.stringify(biotext))
-    var bio = JSON.parse(localStorage.getItem("bio"))
+    localStorage.setItem(name1, JSON.stringify(biotext))
+    var bio = JSON.parse(localStorage.getItem(name1))
     document.getElementById("biotext").innerHTML = bio
-    document.getElementById("biotext").style.display = "block"
+
+    var idtrain = trid
+    Trainers.map((ele) =>{
+        //Find index of specific object using findIndex method.    
+        feedloc = Trainers.findIndex((ele => ele.id == idtrain ));
+        console.log(feedloc)
+        //Update object's name property.
+        Trainers[feedloc].name = updatename.value
+        Trainers[feedloc].mail = updatemail.value
+        Trainers[feedloc].phone = updatephone.value
+    
+        localStorage.setItem("Trainers", JSON.stringify(Trainers));
+        document.getElementById("boxinput2").style.visibility = "hidden"
+        show2();
+    });
+
+    document.getElementById("text").style.display = "none"
+    document.getElementById("emaill1").style.display = "none"
+    document.getElementById("phonee1").style.display = "none"
     document.getElementById("biobox").style.display = "none"
     document.getElementById("biobut").style.display = "none"
+
+    document.getElementById("profname").style.display = "block"
+    document.getElementById("email").style.display = "block"
+    document.getElementById("phone").style.display = "block"
+    document.getElementById("biotext").style.display = "block"
+
+    document.getElementById("profname").innerHTML = updatename.value
+    document.getElementById("email").innerHTML = updatemail.value
+    document.getElementById("phone").innerHTML = updatephone.value
 }
 
-document.getElementById("biotext").innerHTML = JSON.parse(localStorage.getItem("bio"))
+document.getElementById("biotext").innerHTML = JSON.parse(localStorage.getItem(name1))
