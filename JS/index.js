@@ -1,3 +1,3 @@
-gotoregister = () => { window.open('./signup.html')}
+gotoregister = () => { window.open('signup.html', '_self') }
 
-gotolog = () => { window.open('./login.html') }
+gotolog = () => { window.open('login.html', '_self') }

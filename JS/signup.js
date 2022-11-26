@@ -58,7 +58,7 @@ function logSubmit(event) {
         Phone.style.borderColor = ''
 
         localStorage.setItem("Trainers", JSON.stringify(Trainers));
-        window.open("./login.html")  
+        window.open("login.html", '_self')
     }
     event.preventDefault();
  
