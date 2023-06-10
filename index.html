@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- JQuery , Ajax And BootStrap Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Google And Font Awsome Icon -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="./assets/CSS/index.css">
+    <link rel="stylesheet" href="./assets/CSS/animated.css">
+    <title>Home Page</title>
+</head>
+<script>
+    $(document).ready(function () {
+
+        // Set initial CSS properties
+        $("#firstSection").css({ opacity: 0 });
+        $("#developer").addClass('wow fadeInRight');
+
+        // Animate to the final CSS properties over 2000 milliseconds (2 seconds)
+        $("#firstSection").animate({ opacity: 1 }, 2500);
+    });
+</script>
+
+<body>
+
+    <!-- header and navbar -->
+    <header class="sticky-top">
+        <div id="logo">
+            <img src="./assets/icon/logo.png" alt="o_trainers">
+        </div>
+        <nav>
+            <div class="menu">
+                <a href="#firstSection">Home</a>
+                <a href="#about_us">About</a>
+                <a href="#project">Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav1 dropdown">
+                <a class="dropbtn"><i class="fa-solid fa-list"></i></a>
+                <div class="drop-content mt-3">
+                    <a href="#firstSection">Home</a>
+                    <a href="#about_us">About</a>
+                    <a href="#project">Service</a>
+                    <a href="#message-form">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="login">
+        <div class="login p-4">
+            <h3 class="text-success fw-bolder">Login</h3>
+            <hr class="text-success">
+            <form id="login-form" name="contact-form">
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="subject" class="text-success">E-mail</label>
+                            <input type="text" id="mail" name="subject" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <label for="message" class="text-success">Password</label>
+                            <input type="password" id="pass" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <p class="error" id="err"></p>
+                <div>
+                    <button class="btn btn-outline-success" onclick="login()">Login</button>
+                    <button class="btn btn-outline-success" onclick="cancleform()">Cancle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="register">
+        <div class="col-4 register p-4">
+            <h3 class="text-success mb-1 fw-bolder">Register</h3>
+            <hr class="text-success">
+            <form id="register-form">
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label class="text-success mb-1">User Name</label>
+                            <input type="text" id="username" class="form-control">
+                            <p id="errName"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label class="text-success mb-1">Phone</label>
+                            <input type="number" id="phone" class="form-control">
+                            <p id="errphon"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label class="text-success mb-1">E-mail</label>
+                            <input type="email" id="email" name="subject" class="form-control">
+                            <p id="errEmail"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <label class="text-success mb-1">Password</label>
+                            <input type="password" id="password" class="form-control">
+                            <p id="match"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <label class="text-success mb-1">Repeat Password</label>
+                            <input type="password" id="repassword" class="form-control">
+                            <p id="match"></p>
+                        </div>
+                    </div>
+                </div>
+                <p class="error" id="err"></p>
+                <div>
+                    <button class="btn btn-outline-success" onclick="register()">Register</button>
+                    <button class="btn btn-outline-success" onclick="cancleform()">Cancle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <main>
+        <section id="firstSection">
+            <div>
+                <h1> Hello <span class="change_content"> </span> </h1>
+                <p>"We welcome you to the o-trainers site that allows the trainer to track the attendance <br>and
+                    tasksof the trainees and to record notes with ease and flexibility."</p>
+                <a href="#" class="btn-land" onclick="openForm(1)">Login</a>
+                <a href="#" class="btn-land" onclick="openForm(2)">Register</a>
+            </div>
+        </section>
+
+        <section id="about_us">
+            <h1 class="text-success text-center fw-bolder mb-5">About Us</h1>
+            <!-- Coach Part -->
+            <div id="coach" class="justify-content-start align-items-center mt-3 wow fadeInLeftBig"
+                data-wow-duration="2s" data-wow-delay="0.5s">
+                <div class="col-lg-5 col-md-12 col-sm-12 bg-light p-4 rounded-start-3 shadow-sm"
+                    style="--bs-bg-opacity: .3;">
+                    <h5 class="text-success text-center fw-bolder m-2">Orang Academy Team</h5>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Coach Salameh.jpg" class="img-thumbnail" alt="..." width="80px"
+                                height="60px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder mt-1">Salameh Yassin</div>
+                            <div class="row justify-content-between">Manger</div>
+                            <div class="row justify-content-between">
+                                <a href="https://www.linkedin.com/in/salamehyasin/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Coach Hadeel.jpg" class="img-thumbnail" alt="..." width="80px"
+                                height="60px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder mt-1">hadeel Alshahwan</div>
+                            <div class="row justify-content-between">Job Coach</div>
+                            <div class="row justify-content-between">
+                                <a href="https://www.linkedin.com/in/hadeel-alshahwan-0821a3196/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Coach Ala'a.jpg" class="img-thumbnail" alt="..." width="80px"
+                                height="60px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder mt-1">Ala'a Amayreh</div>
+                            <div class="row justify-content-between">Trainer</div>
+                            <div class="row justify-content-between">
+                                <a href="https://www.linkedin.com/in/ala%E2%80%99a-amayreh-8797a5176/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Coach Muna.jpeg" class="img-thumbnail" alt="..." width="80px"
+                                height="60px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder mt-1">Mona Al-obisat</div>
+                            <div class="row justify-content-between">Trainer</div>
+                            <div class="row justify-content-between">
+                                <a href="https://www.linkedin.com/in/mona-al-obisat/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Developer Part -->
+            <div id="developer" class="row justify-content-end align-items-center marginup wow" data-wow-duration="2s"
+                data-wow-delay="0.5s">
+                <div class="col-lg-5 col-md-12 bg-light p-4 rounded-end-3 shadow-sm" style="--bs-bg-opacity: .3;">
+                    <h5 class="text-success text-center fw-bolder m-2">Project Team</h5>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Mohammed Naser.png" class="img-thumbnail" alt="..." width="90px"
+                                height="80px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder">Mohammed Nasser Edden</div>
+                            <div class="row">Full Stack Web Developer</div>
+                            <div class="row">
+                                <a href="https://www.linkedin.com/in/salamehyasin/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Mohammed Nuqaiti.jpg" class="img-thumbnail" alt="..." width="80px"
+                                height="80px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder">Mohammed Nuqeiti</div>
+                            <div class="row">Full Stack Web Developer</div>
+                            <div class="row">
+                                <a href="https://www.linkedin.com/in/mohammad-alnuqeiti-1954b1251/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Mahmoud.jpg" class="img-thumbnail" alt="..." width="80px"
+                                height="80px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder">Mohammoud Harasees</div>
+                            <div class="row">Full Stack Web Developer</div>
+                            <div class="row">
+                                <a href="https://www.linkedin.com/in/mohammad-alnuqeiti-1954b1251/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Shaima'a.jpg" class="img-thumbnail" alt="..." width="80px"
+                                height="80px">
+                        </div>
+                        <div class="col-auto">
+                            <div class="row fs-6 fw-bolder">Shaima'a Yassin</div>
+                            <div class="row">Full Stack Web Developer</div>
+                            <div class="row">
+                                <a href="https://www.linkedin.com/in/shaimaa-al-yaseen-570180253/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-3">
+                        <div class="col-auto">
+                            <img src="./assets/img/Ruba.jpg" class="img-thumbnail" alt="..." width="80px" height="80px">
+                        </div>
+                        <div class="col-auto mt-2">
+                            <div class="row fs-6 fw-bolder">Ruba AL-Wageei</div>
+                            <div class="row">Full Stack Web Developer</div>
+                            <div class="row">
+                                <a href="https://www.linkedin.com/in/ruba-salahuddin-047493206/"
+                                    class="nav-link text-success">linkedin Page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="project" class="my-project section">
+            <div class="row align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                    <div class="left-image">
+                        <a><img src="./assets/img/team.png" alt="Workspace Desktop"></a>
+                        <div class="info">
+                            <div class="inner-content  text-secondary">
+                                <a>
+                                    <h4>O-Trainer Team</h4>
+                                </a>
+                                <p>A group of programmers at Coding Academy By Orange</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                    <div class="right-list">
+                        <ul>
+                            <li>
+                                <div class="left-content align-self-center text-secondary">
+                                    <a>
+                                        <h4>UX UI</h4>
+                                    </a>
+                                    <p>Our team of skilled professionals in web development includes UX/UI
+                                        experts who are responsible for creating the user interface (UI) and
+                                        user experience (UX) of websites and web applications.</p>
+                                </div>
+                                <div class="right-image">
+                                    <a><img src="./assets/img/webapp.png" alt=""></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left-content align-self-center text-secondary">
+                                    <a>
+                                        <h4>FrontEnd</h4>
+                                    </a>
+                                    <p>Our team of frontend web developers of a project is an integral part of
+                                        the software development process. They focus on designing and
+                                        implementing the user-facing components of a website or web application,
+                                        ensuring an engaging and seamless user experience.</p>
+                                </div>
+                                <div class="right-image">
+                                    <a><img src="./assets/img/mobileapp.png" alt=""></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container wow zoomIn" data-wow-duration="2s" data-wow-delay="0s">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-7 col-md-12 col-sm-12 bg-light p-5 rounded-3 shadow-lg myborder"
+                        style="--bs-bg-opacity : 0.5;">
+                        <h1 class="text-success text-center fw-bolder wow flipInX" data-wow-duration="2s"
+                            data-wow-delay="2s">Contact Us</h1>
+                        <form id="message-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label for="name" class="text-success">Your name</label>
+                                        <input type="text" id="name" name="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6  d-none d-lg-block">
+                                    <img src="./assets/img/message1.png" alt="" srcset="" width="100%">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="md-form mb-0">
+                                        <label for="email" class="text-success">Your email</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-none d-lg-block">
+                                    <img src="./assets/img/message2.png" alt="" srcset="" width="100%">
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <label for="subject" class="text-success">Subject</label>
+                                        <input type="text" id="subject" name="subject" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <div class="md-form">
+                                        <label for="message" class="text-success">Your message</label>
+                                        <textarea type="text" id="message" name="message" rows="2"
+                                            class="form-control md-textarea"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-md-left">
+                                <a class="btn btn-outline-success">Send</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer">
+        <div class="container text-center">
+            <!-- <h4 class="text-light" style="--bs-text-opacity: 0.5;">follow us</h4> -->
+            <div class="container">
+                <a href="https://github.com/otrenair" target="_blank"><i class="fa-brands fa-github text-light"></i></a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank"><i
+                        class="fa-solid fa-envelope text-light"></i></a>
+                <a href="https://www.linkedin.com/in/o-trainer-3868a2257/" target="_blank"><i
+                        class="fab fa-linkedin-in text-light"></i></a>
+            </div>
+            <hr>
+            <div class="row copyright">
+                <div class="col-auto">© Copyright 2023 Coding Nasser . All Rights Reserved.</div>
+                <div class="col-auto">Design:
+                    <a target="_blank" rel="nofollow" href="https://mhamdnaser.github.io/MyPortfolio/">
+                        Muhammed_Nasser_Edden
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./assets/JS/index.js"></script>
+    <script src="./assets/be/login.js"></script>
+    <script src="./assets/be/signup.js"></script>
+    <script src="./assets/JS/animation.js"></script>
+</body>
+
+</html>

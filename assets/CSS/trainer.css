@@ -1,0 +1,623 @@
+@keyframes newsScroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-300%);
+    }
+}
+
+:root {
+    --darkblue: #ffffff;
+    --lightblue: #89ded0;
+    --blue: rgb(0, 109, 167, 0.8);
+    --nbox: #ffffff;
+    --white: #ffffff;
+    --font-color: #3a3939;
+    --font-light: #3a3939;
+    --white: rgb(255, 255, 255);
+    --shadow: 0 0 0.375rem 0.25rem rgb(0 0 0 / 15%);
+    ;
+
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.clearfix {
+    clear: both;
+}
+
+body {
+    z-index: 1;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 220px;
+    background: var(--darkblue);
+    padding: 0px 25px;
+    height: 100vh;
+    position: relative;
+    transition: 1s ease-in-out;
+    float: left;
+    box-shadow: var(--shadow);
+}
+
+.main {
+    max-width: 100%;
+    width: 79.1%;
+    float: left;
+    padding: 25px;
+}
+
+.logo span {
+    font-size: 20px;
+    color: var(--font-light);
+    font-weight: normal;
+}
+
+.logo {
+    margin-top: 40px;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.menu-icon {
+    background: var(--blue);
+    border-radius: 21px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 26px !important;
+    color: var(--white);
+    font-size: 12px !important;
+    position: absolute;
+    right: -18px;
+    top: 20px;
+    border: 5px solid #fff;
+}
+
+.sidenav {
+    margin-top: 20px;
+}
+
+.sidenav li {
+    list-style: none;
+    padding: 12px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.sidenav li:hover {
+    background-color: rgba(124, 125, 182, .06);
+}
+
+.sidenav li i {
+    color: var(--font-color);
+    padding-right: 7px;
+}
+
+.sidenav li a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.active {
+    background: var(--blue) !important;
+    position: relative;
+}
+
+.sidenav li span {
+    float: right;
+}
+
+.sidenav .active a {
+    color: var(--white) !important;
+}
+
+.sidenav .active i {
+    color: var(--white) !important;
+}
+
+.active:after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    width: 0.25rem;
+    height: 2.5rem;
+    top: 2px;
+    background: var(--blue);
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.active1 {
+    width: 40px;
+    transition: 1s ease-in-out;
+}
+
+.menuicon {
+    transform: rotateZ(-180deg);
+    transition: 1s ease-in-out;
+}
+
+.lm {
+    text-align: center;
+    font-size: 30px;
+}
+
+.anchor {
+    display: none;
+}
+
+.headspan {
+    display: none;
+}
+
+
+/* -------------------------------------------------------------------- */
+
+
+.sidebar img {
+    width: 50%;
+}
+
+body {
+    background-color: #D6E2E0;
+}
+
+#li {
+    position: fixed;
+    bottom: 0px;
+}
+
+#home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+}
+
+#home1 {
+    background-color: rgb(0, 109, 167, 0.8);
+    color: white;
+    padding: 50px;
+    font-weight: bold;
+    font-size: 3em;
+    border-radius: 15px;
+}
+
+.tarinerphoto {
+    margin-top: 5%;
+    padding: 30px;
+    background-color: rgb(0, 109, 167, 0.8);
+}
+
+.neeews {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.containerHome {
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.news-feed {
+    width: 100%;
+    overflow: hidden;
+}
+
+.news-feed ul {
+    list-style: none;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.news-feed li {
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+    animation: newsScroll 60s linear infinite;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
+
+#userProfile {
+    display: flex;
+    flex-direction: row;
+    /* width: 75%; */
+    /* height: 100vh; */
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 100px;
+    display: none;
+
+}
+
+.card1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    margin: 30px;
+    /* margin: auto; */
+    text-align: center;
+    font-family: arial;
+    background-color: white;
+    padding: 30px;
+
+}
+
+.title {
+    color: grey;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 12px;
+    color: white;
+    background-color: rgb(0, 109, 167, 0.8);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+button:hover,
+a:hover {
+    opacity: 0.7;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    margin: 30px;
+    font-family: arial;
+    background-color: white;
+    padding: 30px;
+
+}
+
+.card2 .info {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: rgb(0, 109, 167, 0.8);
+    text-align: center;
+    font-size: 18px;
+}
+
+.card2 div {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: gray;
+    padding: 6px;
+    padding-left: 23px;
+}
+
+.card2 div span {
+    color: grey;
+    font-size: 16px;
+    overflow-wrap: break-word;
+}
+
+.tablee h1 {
+    color: rgb(0, 109, 167, 0.8);
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.tablee {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+
+#student {
+    display: none;
+}
+
+#attendance {
+    display: none;
+}
+
+#task {
+    display: none;
+}
+
+#feed {
+    display: none;
+}
+
+.table-list {
+    width: 95%;
+    height: 100vh;
+    padding: 10px;
+    margin: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    border-collapse: collapse;
+    margin: 50px auto;
+    font-size: 15px;
+    min-width: 70%;
+    overflow: scroll;
+    border-radius: 5px;
+}
+
+table thead tr {
+    color: #fff;
+    background: rgb(0, 109, 167, 0.8);
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+caption {
+    color: #fff;
+    background: rgb(0, 109, 167, 0.8);
+    text-align: left;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 15px;
+
+}
+
+table caption {
+    border-radius: 5px 5px 0 0;
+
+}
+
+table td {
+    text-align: center;
+    padding: 12px 15px;
+    overflow-wrap: break-word;
+
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-of-type(odd) {
+    background: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(0, 109, 167, 0.8);
+}
+
+table button:hover {
+    background: rgb(25, 135, 84);
+    color: #fff;
+    transition: 0.5rem;
+}
+
+.bsxaddstud {
+    width: 30%;
+    margin: 0 auto;
+}
+
+#boxinput2,
+#boxinput1 {
+    padding: 2vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    visibility: hidden;
+}
+
+#boxinput3 {
+    padding: 2vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    visibility: hidden;
+}
+
+#boxinput1 input,
+#boxinput2 input,
+#boxinput3 input {
+    padding: 5px;
+}
+
+#addstud {
+    border-radius: 6px;
+    height: 40px;
+    margin-top: 2vh;
+}
+
+#studcard {
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    width: 300px;
+    height: 140px;
+    border-radius: 8px;
+    background-color: rgb(0, 109, 167, 0.8);
+    display: none;
+}
+
+#studdeleted {
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    width: 300px;
+    height: 140px;
+    border-radius: 8px;
+    background-color: rgb(0, 109, 167, 0.8);
+    visibility: hidden;
+}
+
+#studdelet {
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    width: 180px;
+    height: 140px;
+    border-radius: 8px;
+    background-color: rgb(0, 109, 167, 0.8);
+    visibility: hidden;
+}
+
+#deletcard {
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 30px;
+    width: 180px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: rgb(0, 109, 167, 0.8);
+    color: white;
+    display: none;
+}
+
+.studinput {
+    width: 90%;
+    padding: 1vh;
+    margin: 2vh auto;
+    border-radius: 8px;
+    border: none;
+}
+
+#savestudent {
+    background-color: #D6E2E0;
+    color: #3a3939;
+    border-radius: 8px;
+    width: 40%;
+    padding: 1vh;
+    margin: 2vh auto;
+}
+
+#butfeed {
+    text-align: center;
+    height: 22px !important;
+    padding: 4px !important;
+    width: 38px;
+    font-size: 12px;
+    margin-left: 2px;
+    color: #3a3939;
+}
+
+#butdele {
+    text-align: center;
+    height: 22px !important;
+    padding: 4px !important;
+    width: 56px;
+    font-size: 12px;
+    margin-left: 2px;
+    color: #3a3939;
+}
+
+#erroridsame {
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+#biobox {
+    display: none;
+}
+
+#biobut {
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+
+#attedit {
+    width: 25px;
+    display: none;
+}
+
+#numbut {
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+
+#phonee1 {
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+
+}
+
+
+
+#embut {
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+
+#emaill1 {
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+
+}
+
+#txbut {
+    width: 20%;
+    font-size: 12px;
+    display: none;
+}
+
+#text {
+    width: 75%;
+    height: 20px;
+    font-size: 12px;
+    display: none;
+}
+
+#trainerphoto1 {
+    margin-top: 3%;
+}
+
+@media only screen and (max-width: 720px) {
+    .card2 {
+        width: 100%;
+
+    }
+}

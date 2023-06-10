@@ -1,0 +1,63 @@
+@keyframes changetext {
+    0% {
+        content: "";
+    }
+    5% {
+        content: "W";
+    }
+    10% {
+        content: "We";
+    }
+    15%{
+        content: "Wel";
+    }
+    20%{
+        content: "Welc";
+    }
+    25%{
+        content: "Welco";
+    }
+    30%{
+        content: "Welcom";
+    }
+    35%{
+        content: "Welcome";
+    }
+    40% {
+        content: "t";
+    }
+    45% {
+        content: "to";
+    }
+    50% {
+        content: "O";
+    }
+    55% {
+        content: "O-";
+    }
+    60% {
+        content: "O-t";
+    }
+    65% {
+        content: "O-tr";
+    }
+    70% {
+        content: "O-tra";
+    }
+    75% {
+        content: "O-trai";
+    }
+    80% {
+        content: "O-train";
+    }
+    85% {
+        content: "O-traine";
+    }
+    90% {
+        content: "O-trainer";
+    }
+    100% {
+        content: "O-trainers";
+    }
+
+}

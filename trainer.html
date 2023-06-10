@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="./assets/CSS/trainer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/782baa506c.js" crossorigin="anonymous"></script>
+    <title>Trainer</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1 class="logo">O<span>-Trainers</span></h1>
+        <i class="fa fa-chevron-left menu-icon"></i>
+        <ul class="sidenav">
+            <li class="active" onclick="show(1)"><i class="fa fa-home"></i><a href="#"> Home</a></li>
+            <li onclick="show(2)"><i class="fa fa-user"></i><a href="#"> Profile User</a></li>
+            <li onclick="show(3)"><i class="fa-solid fa-graduation-cap"></i><a href="#"> Student</a></li>
+            <li onclick="show(4)"><i class="fa-solid fa-clipboard-user"></i><a href="#"> Attendance</a></li>
+            <li onclick="show(5)"><i class="fa-solid fa-house-laptop"></i><a href="#"> Assignment</a></li>
+            <li onclick="show(6)"><i class="fa-solid fa-comment"></i><a href="#"> Feedback</a></li>
+            <li id="li" onclick="show(7)"><i class="fa-solid fa-right-from-bracket"></i><a href="index.html">
+                    Log Out</a></li>
+
+        </ul>
+    </div>
+
+    <div id="home">
+        <div class="tarinerphoto">
+            <img id="trainerphoto1" src="./assets/icon/icon-256x256.png" alt="" style="width:240px">
+            <div id="home1">
+            </div>
+        </div>
+        <div class="neeews">
+            <div class="coupon">
+            </div>
+            <div class="news-feed">
+                <ul>
+                    <li>About O-Trainer And Coding Academy By Orange</li>
+                    <li>`Orange organized an employment week in the Orange Digital Village in Al-Abdali area to
+                        promote "training for employment`</li>
+                    <li>Success stories by graduates from the Coding Academy by Orange highlighting their own
+                        experience, what they learned in the academy,and their future projects.</li>
+                    <li>"We welcome you to the o-trainers site that allows the trainer to track the attendance
+                        and
+                        tasksof the trainees and to record notes with ease and flexibility."</li>
+                    <!-- Add more news items as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="userProfile">
+        <div class="card1">
+            <img id="trainerphoto" src="./assets/icon/icon-256x256.png" alt="" style="width:100%">
+            <h1 id="traincard"> </h1>
+            <br>
+            <p class="title">Orange Coding Academy</p>
+            <br>
+            <p><button id="edittrain" onclick="edittrain()">Edit</button></p>
+        </div>
+        <div class="card2">
+            <div class="info">
+                <p>Information</p>
+            </div>
+            <div>
+                <p>Name:</p>
+                <span id="profname"></span>
+                <input type="text" id="text">
+                <p class="error" id="errName"></p>
+            </div>
+            <div>
+                <p id="traneridset"></p>
+            </div>
+
+            <div>
+                <p>Email:</p>
+                <span id="email"></span>
+                <!-- <input type="email" id="emaill1" > -->
+                <input id="emaill1" type="email" placeholder="Email" />
+            </div>
+            <div>
+                <p>Phone Number:</p>
+                <span id="phone"></span>
+                <input type="number" id="phonee1">
+
+            </div>
+            <div>
+                <p>Brthday Date:</p>
+                <span id="birthday">24-12-1995</span>
+            </div>
+            <div>
+                <p>bio:</p>
+                <span id="biotext"></span>
+                <textarea id="biobox" cols="45" rows="6"></textarea>
+                <button id="biobut" onclick="savebio()">SAVE</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="studcard">
+        <input type="text" class="studinput" value="" id="StudentName" placeholder="Enter Name">
+        <button id="savestudent" onclick="saveStudent(1)">SAVE</button>
+        <button id="savestudent" onclick="saveStudent(0)">Cancel</button>
+    </div>
+
+    <div id="deletcard">
+        <h6>Do You Want Delet This Student</h6>
+        <button id="savestudent" onclick="suredelet(1)">Yes</button>
+        <button id="savestudent" onclick="suredelet(0)">No</button>
+    </div>
+
+    <section id="student" class="tablee">
+        <div class="bsxaddstud">
+            <button id="addstud" onclick="addstud()">add student</button>
+        </div>
+        <div id="student-list" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+
+    <section id="attendance" class="tablee">
+        <div id="boxinput1">
+            <input type="text" value="" id="studattend" placeholder="Attendance">
+            <input type="text" value="" id="allDay" placeholder="Total Day">
+            <button onclick="addatten()">add Attendance</button>
+        </div>
+        <div id="attendance-list" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+
+    <section id="task" class="tablee">
+        <div id="boxinput2">
+            <input type="text" value="" id="studtask" placeholder="student Task">
+            <input type="text" value="" id="allTask" placeholder="All Task">
+            <button onclick="addtask()">add Task</button>
+        </div>
+        <div id="task-list" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+
+    <section id="feed" class="tablee">
+        <div id="boxinput3">
+            <textarea name="" id="Studfedd" cols="20" rows="1" placeholder="Feed Back"></textarea>
+            <button onclick="addfeed()">add FeedBack</button>
+        </div>
+        <div id="feed-back" class="table-list">
+            <h1>Attendance List</h1>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/JS/sidebar.js"></script>
+    <script src="./assets/be/trainer.js"></script>
+</body>
+
+</html>
